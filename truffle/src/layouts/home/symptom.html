@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <title></title>
+   <link rel="stylesheet" type="text/css" href="symptom_selector/selector.css?v=1">
+   <link rel="stylesheet" type="text/css" href="symptom_selector/fontawesome/assets/css/font-awesome.min.css" />
+   <script src="libs/jquery-1.12.2.min.js"></script>
+   <script src="libs/json2.js"></script><!-- json for ie7 -->
+   <script src="libs/jquery.imagemapster.min.js?v=1.1"></script>
+   <script src="libs/typeahead.bundle.js"></script>
+
+   <script src="symptom_selector/selector.js?v=3.3"></script>
+
+<script type="text/javascript">
+
+       $(document).ready(function () {
+           $("#symptomSelector").symptomSelector(
+           {
+               mode: "diagnosis", // For specialisation only use value "specialisations"
+               webservice: "https://sandbox-healthservice.priaid.ch", //or for live data https://healthservice.priaid.ch
+               language: "en-gb", // You can change language here to de-ch, tr-tr...
+               specUrl: "sampleSpecialisationPage",// Here should come url for specialisations doctor search page
+               accessToken: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6ImhhY2thdGhvbnNwaXRAZ21haWwuY29tIiwicm9sZSI6IlVzZXIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiI0NDE2IiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy92ZXJzaW9uIjoiMjAwIiwiaHR0cDovL2V4YW1wbGUub3JnL2NsYWltcy9saW1pdCI6Ijk5OTk5OTk5OSIsImh0dHA6Ly9leGFtcGxlLm9yZy9jbGFpbXMvbWVtYmVyc2hpcCI6IlByZW1pdW0iLCJodHRwOi8vZXhhbXBsZS5vcmcvY2xhaW1zL2xhbmd1YWdlIjoiZW4tZ2IiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL2V4cGlyYXRpb24iOiIyMDk5LTEyLTMxIiwiaHR0cDovL2V4YW1wbGUub3JnL2NsYWltcy9tZW1iZXJzaGlwc3RhcnQiOiIyMDE4LTEyLTMxIiwiaXNzIjoiaHR0cHM6Ly9zYW5kYm94LWF1dGhzZXJ2aWNlLnByaWFpZC5jaCIsImF1ZCI6Imh0dHBzOi8vaGVhbHRoc2VydmljZS5wcmlhaWQuY2giLCJleHAiOjE1NDY3MjA0MDksIm5iZiI6MTU0NjcxMzIwOX0.h1DlzEDug1pJknJoJkgEKk9XhDFaJIB2fFTsHZhu1_Q" //Place here your token
+           });
+       });
+   </script>
+
+</head>
+<body>
+
+   <table class="container-table">
+       <tr>
+           <td valign="middle" colspan="2" class="td-header box-white bordered-box width50"><h4 class="header" id="selectSymptomsTitle"><span class="badge pull-left badge-primary visible-lg margin5R">1</span></h4></td>
+           <td valign="middle" class="td-header bordered-box box-white width25"><h4 class="header" id="selectedSymptomsTitle"><span class="badge pull-left badge-primary visible-lg margin5R">2</span></h4></td>
+           <td valign="middle" class="td-header bordered-box box-white width25"><h4 class="header" id="possibleDiseasesTitle"><span class="badge pull-left badge-primary visible-lg margin5R">3</span></h4></td>
+       </tr>
+       <tr>
+           <td valign="top" class="selector_container bordered-box box-white width25"><div id="symptomSelector"></div></td>
+           <td valign="top" class="selector_container bordered-box box-white width25"><div id="symptomList"></div></td>
+           <td valign="top" class="selector_container bordered-box box-white width25"><div id="selectedSymptomList"></div></td>
+           <td valign="top" class="selector_container bordered-box box-white width25"><div id="diagnosisList"></div></td>
+       </tr>
+   </table>
+   <div>
+
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+
+   </div>
+       <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+
+    <!-- Load our React component. -->
+    <script src="assets/js/like_button.js"></script>
+
+</body>
+</html>
